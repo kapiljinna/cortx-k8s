@@ -158,7 +158,7 @@ spec:
             - /bin/sh
           args:
             - -c
-            - /opt/seagate/cortx/s3/bin/s3_start --service s3authserver -c yaml:///etc/cortx/cluster.conf;
+            - /opt/seagate/cortx/s3/bin/s3_start --service authserver -c yaml:///etc/cortx/cluster.conf;
           {{- end }}
           volumeMounts:
             - name: {{ .Values.cortxdata.cfgmap.volmountname }}
@@ -371,7 +371,7 @@ spec:
             - /bin/sh
           args:
             - -c
-            - /opt/seagate/cortx/s3/bin/s3_start --service s3bgconsumer -c yaml:///etc/cortx/cluster.conf;
+            - /opt/seagate/cortx/s3/bin/s3_start --service bgworker -c yaml:///etc/cortx/cluster.conf;
           {{- end }}
           volumeMounts:
             - name: {{ .Values.cortxdata.cfgmap.volmountname }}

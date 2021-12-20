@@ -153,7 +153,7 @@ spec:
             - /bin/sh
           args:
             - -c
-            - /opt/seagate/cortx/s3/bin/s3_start --service s3bgproducer -c yaml:///etc/cortx/cluster.conf;
+            - /opt/seagate/cortx/s3/bin/s3_start --service bgscheduler -c yaml:///etc/cortx/cluster.conf;
           {{- end }}
           volumeMounts:
             - name: {{ .Values.cortxcontrol.cfgmap.volmountname }}
